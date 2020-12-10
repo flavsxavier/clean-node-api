@@ -1,0 +1,17 @@
+{
+  "name": "clean-node-api",
+  "version": "1.0.0",
+  "description": "Simple NodeJS API with Clean Architecture concepts.",
+  "main": "index.js",
+  "author": "Flaviano Xavier <flaviano.pxjunior@gmail.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.15.0",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
