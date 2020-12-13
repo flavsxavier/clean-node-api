@@ -18,11 +18,13 @@
   },
   "scripts": {
     "test": "jest --silent --verbose --colors",
-    "test:watch": "jest --watch --silent --verbose --colors"
+    "test:watch": "jest --watch --silent --verbose --colors",
+    "test:ci": "jest --coverage"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn test:ci"
     }
   },
   "lint-staged": {
