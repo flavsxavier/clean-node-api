@@ -15,6 +15,7 @@
     "prettier": "2.2.1"
   },
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest --silent --verbose --colors",
+    "test:watch": "jest --watch --silent --verbose --colors"
   }
 }
