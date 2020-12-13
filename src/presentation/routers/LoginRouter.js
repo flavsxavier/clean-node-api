@@ -21,8 +21,7 @@ module.exports = class LoginRouter {
       if (!accessToken) return HttpResponse.unauthorizedError();
       return HttpResponse.ok({ accessToken });
     } catch (error) {
-      // Show log of error is good for production
-      // console.error(error);
+      console.error(error);
       return HttpResponse.serverError();
     }
   }
