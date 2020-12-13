@@ -18,7 +18,8 @@
   },
   "scripts": {
     "test": "jest --silent --verbose --colors --passWithNoTests",
-    "test:unit": "yarn test --watch",
+    "test:unit": "yarn test --watch -c jest-unit-config.js",
+    "test:integration": "yarn test --watch -c jest-integration-config.js",
     "test:staged": "yarn test",
     "test:ci": "yarn test --coverage --noStackTrace"
   },
@@ -35,5 +36,6 @@
       "git add"
     ],
     "*.{js,css,md}": "prettier --write"
-  }
+  },
+  "type": "module"
 }
