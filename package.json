@@ -11,11 +11,26 @@
   },
   "devDependencies": {
     "eslint": "^7.15.0",
+    "husky": "^4.3.5",
     "jest": "^26.6.3",
+    "lint-staged": "^10.5.3",
     "prettier": "2.2.1"
   },
   "scripts": {
     "test": "jest --silent --verbose --colors",
     "test:watch": "jest --watch --silent --verbose --colors"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --cache --fix",
+      "test",
+      "git add"
+    ],
+    "*.{js,css,md}": "prettier --write"
   }
 }
