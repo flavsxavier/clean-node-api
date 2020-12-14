@@ -1,3 +1,3 @@
-import config from './jest.config';
+const config = require('./jest.config');
 config.testMatch = ['**/?(*.)+(spec).[tj]s?(x)'];
-export const config;
+module.exports = config;

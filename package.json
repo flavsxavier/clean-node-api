@@ -5,6 +5,7 @@
   "main": "index.js",
   "author": "Flaviano Xavier <flaviano.pxjunior@gmail.com>",
   "license": "MIT",
+  "type": "commonjs",
   "dependencies": {
     "express": "^4.17.1",
     "mongoose": "^5.11.7"
@@ -36,6 +37,5 @@
       "git add"
     ],
     "*.{js,css,md}": "prettier --write"
-  },
-  "type": "module"
+  }
 }
