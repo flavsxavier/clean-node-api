@@ -1,6 +1,5 @@
 const HttpResponse = require('../helpers/HttpResponse');
-const InvalidParamError = require('../helpers/InvalidParamError');
-const MissingParamError = require('../helpers/MissingParamError');
+const { MissingParamError, InvalidParamError } = require('../errors');
 
 module.exports = class LoginRouter {
   constructor(authUseCase, emailValidator) {
@@ -21,6 +20,7 @@ module.exports = class LoginRouter {
       if (!accessToken) return HttpResponse.unauthorizedError();
       return HttpResponse.ok({ accessToken });
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error(error);
       return HttpResponse.serverError();
     }
