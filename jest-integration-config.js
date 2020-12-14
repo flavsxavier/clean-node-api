@@ -1,3 +1,4 @@
 const config = require('./jest.config');
-config.testMatch = ['**/?(*.)+(spec).[tj]s?(x)'];
+
+config.testMatch = ['**/?(*.)+(test).[tj]s?(x)'];
 module.exports = config;

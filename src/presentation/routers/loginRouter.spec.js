@@ -4,17 +4,6 @@ const InvalidParamError = require('../helpers/InvalidParamError');
 const UnauthorizedError = require('../helpers/UnauthorizedError');
 const ServerError = require('../helpers/ServerError');
 
-const makeSut = () => {
-  const authUseCaseSpy = makeAuthUseCase();
-  const emailValidatorSpy = makeEmailValidator();
-  const sut = new LoginRouter(authUseCaseSpy, emailValidatorSpy);
-  return {
-    sut,
-    authUseCaseSpy,
-    emailValidatorSpy,
-  };
-};
-
 const makeAuthUseCase = () => {
   class AuthUseCaseSpy {
     async auth({ email, password }) {
@@ -56,6 +45,17 @@ const makeEmailValidatorWithError = () => {
     }
   }
   return new EmailValidatorSpy();
+};
+
+const makeSut = () => {
+  const authUseCaseSpy = makeAuthUseCase();
+  const emailValidatorSpy = makeEmailValidator();
+  const sut = new LoginRouter(authUseCaseSpy, emailValidatorSpy);
+  return {
+    sut,
+    authUseCaseSpy,
+    emailValidatorSpy,
+  };
 };
 
 describe('Login Router', () => {
